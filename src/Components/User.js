@@ -56,8 +56,13 @@ export const User = (props) => {
 
     // Handle Steps Decrement Operation
     const handle_steps_decrease = () => {
-        target -= 500;
-        setTarget(target);
+        if (target > 500){
+            target -= 500;
+            setTarget(target);
+        }
+        else {
+            console.log("Target Can not be less than 500")
+        }
     }
 
 
@@ -160,8 +165,8 @@ export const User = (props) => {
                     
                     progress_bar.style.backgroundImage = `conic-gradient(
                         #f45c84 ${percentage_protien}%,
-                        #f5c90f ${percentage_protien}% ${percentage_protien + percentage_fats}%,
-                        #05bff1 ${percentage_protien + percentage_fats}% ${percentage_protien + percentage_fats + percentage_carbs}%,
+                        #05bff1 ${percentage_protien}% ${percentage_protien + percentage_fats}%,
+                        #f5c90f ${percentage_protien + percentage_fats}% ${percentage_protien + percentage_fats + percentage_carbs}%,
                         #fff ${percentage_protien + percentage_fats + percentage_carbs}% 100%
                     )`
                 }
@@ -170,7 +175,7 @@ export const User = (props) => {
     }, [])
 
 
-
+    // handling Hovering Effect on Nutrient Bar
     const handle_mouse_over = () => {
         setHovering(true);
     }
@@ -186,8 +191,10 @@ export const User = (props) => {
 
 
     const handle_calorie_decrease = () => {
-        calorie_target -= 100;
-        setCalorieTarget(calorie_target);
+        if (calorie_target > 100){
+            calorie_target -= 100;
+            setCalorieTarget(calorie_target);
+        }
     }
 
 
