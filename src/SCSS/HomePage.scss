@@ -1,0 +1,32 @@
+.HomePage {
+    padding: 20vh 10vh;
+    background: #1e2631;
+    min-width: 84rem;
+
+    .user_profile_info {
+        border-radius: 20px;
+        padding: 2rem 0.5rem 10rem 0.5rem;
+        background: #101317;
+        box-shadow: 2px 3px 42px rgba(0, 0, 0, 0.5);
+        border-radius: 16px;
+
+        .user_profile_headings {
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(5,43% 20% 25% 25% 5%);
+            color: #fff;
+            align-items: center;
+            margin-bottom: 1rem;
+
+            .user_profile_heading {
+                font-weight: 1000;
+                font-size: 18px;
+
+                :first-child {
+                    margin-right: 0.6rem;
+                }
+            }
+
+        }
+    }
+}
